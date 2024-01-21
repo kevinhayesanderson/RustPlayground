@@ -1,0 +1,9 @@
+Rust:
+  - An Associated function is a function that's implemented on a type.
+  - Enumeration, often called an enum, which is a type that can be in one of multiple states:
+      - Each possible state is called a variant.
+  - Ensuring Reproducible Builds with the Cargo.lock File:
+      - it’s often checked into source control with the rest of the code in your project.
+  - Shadowing lets us reuse the variable name rather than forcing us to create two unique variables:
+  - On Windows, pressing enter results in a carriage return and a newline, \r\n:
+      - The trim method eliminates \n or \r\n
