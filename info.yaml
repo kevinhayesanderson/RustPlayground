@@ -58,4 +58,7 @@ Control Flow:
               - You can optionally specify a loop label on a loop that you can then use with break or continue to specify that those keywords apply to the labeled loop instead of the innermost loop.
               - Loop labels must begin with a single quote.
       - while:
-      - for
+      - for:
+Ownership:
+  - It enables Rust to make memory safety guarantees without needing a garbage collector:
+      - related features: borrowing, slices, and how Rust lays data out in memory
