@@ -49,3 +49,13 @@ Functions:
     - A new scope block created with curly brackets is an expression.
     - Expressions do not include ending semicolons.
       - If you add a semicolon to the end of an expression, you turn it into a statement, and it will then not return a value.
+Control Flow:
+  - if expressions
+  - Rust has three kinds of loops:
+      - loop:
+          - The loop keyword tells Rust to execute a block of code over and over again forever or until you explicitly tell it to stop.
+          - Loop Labels to Disambiguate Between Multiple loops:
+              - You can optionally specify a loop label on a loop that you can then use with break or continue to specify that those keywords apply to the labeled loop instead of the innermost loop.
+              - Loop labels must begin with a single quote.
+      - while:
+      - for
