@@ -7,3 +7,35 @@ Rust:
   - Shadowing lets us reuse the variable name rather than forcing us to create two unique variables:
   - On Windows, pressing enter results in a carriage return and a newline, \r\n:
       - The trim method eliminates \n or \r\n
+Datatypes:
+  two data type subsets:
+    - scalar
+    - compound
+  Rust is a statically typed language:
+    - which means that it must know the types of all variables at compile time
+Scalar Types:
+  A scalar type represents a single value:
+  Rust has four primary scalar types:
+    - integers:
+        - Rust’s defaults are generally good places to start: integer types default to i32.
+        - The primary situation in which you'd use isize or usize is when indexing some sort of collection.
+        - https://doc.rust-lang.org/book/ch03-02-data-types.html#integer-overflow
+    - floating-point numbers:
+        - Rust’s floating-point types are f32 and f64
+        - The binary format of a 32-bit single-precision float variable is s-eeeeeeee-fffffffffffffffffffffff, where s=sign, e=exponent, and f=fractional part (mantissa).
+          - A single-precision float only has about 7 decimal digits of precision (actually the log base 10 of 223, or about 6.92 digits of precision).
+          - The greater the integer part is, the less space is left for floating part precision.
+        - https://www.geeksforgeeks.org/difference-between-single-precision-and-double-precision/
+    - Booleans
+    - characters:
+        - Rust’s char type is four bytes in size and represents a Unicode Scalar Value, which means it can represent a lot more than just ASCII.
+          - Accented letters; Chinese, Japanese, and Korean characters; emoji; and zero-width spaces are all valid char values in Rust.
+          - Unicode Scalar Values range from U+0000 to U+D7FF and U+E000 to U+10FFFF inclusive.
+Compound types:
+  - Compound types can group multiple values into one type.
+  - Rust has two primitive compound types:
+      - tuples:
+          - The tuple without any values has a special name, unit.
+          - This value and its corresponding type are both written () and represent an empty value or an empty return type.
+          - Expressions implicitly return the unit value if they don’t return any other value.
+      - arrays:
