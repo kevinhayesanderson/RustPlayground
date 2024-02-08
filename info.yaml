@@ -60,5 +60,37 @@ Control Flow:
       - while:
       - for:
 Ownership:
-  - It enables Rust to make memory safety guarantees without needing a garbage collector:
-      - related features: borrowing, slices, and how Rust lays data out in memory
+  It enables Rust to make memory safety guarantees without needing a garbage collector:
+    - related features: borrowing, slices, and how Rust lays data out in memory
+  The main purpose of ownership is to manage heap data:
+  Ownership Rules:
+    - Each value in Rust has an owner.
+    - There can only be one owner at a time.
+    - When the owner goes out of scope, the value will be dropped.
+  Memory and Allocation:
+    When a variable goes out of scope, Rust calls a special function for us:
+    This function is called drop, and it’s where the author of String can put the code to return the memory:
+    Rust calls drop automatically at the closing curly bracket:
+  Data pointers pointing to the same location:
+    This is a problem:
+      when s2 and s1 go out of scope, they will both try to free the same memory.
+      This is known as a double free error and is one of the memory safety bugs we mentioned previously.
+      Freeing memory twice can lead to memory corruption, which can potentially lead to security vulnerabilities.
+    The concept of copying the pointer, length, and capacity without copying the data probably sounds like making a shallow copy:
+    But because Rust also invalidates the first variable, instead of being called a shallow copy, it’s known as a move:
+    Rust will never automatically create “deep” copies of your Datatypes:
+    Therefore, any automatic copying can be assumed to be inexpensive in terms of runtime performance:
+  Variables and Data Interacting with Clone: If we do want to deeply copy the heap data of the String, not just the stack data, we can use a common method called clone.
+  Stack-Only Data: Copy
+    Rust has a special annotation called the Copy trait that we can place on types that are stored on the stack
+    Rust won’t let us annotate a type with Copy if the type, or any of its parts, has implemented the Drop trait.
+  Types that implement Copy:
+    - All the integer types, such as u32.
+    - The Boolean type, bool, with values true and false.
+    - All the floating-point types, such as f64.
+    - The character type, char.
+    - Tuples, if they only contain types that also implement Copy. For example, (i32, i32) implements Copy, but (i32, String) does not.
+  Ownership and Functions: Passing a variable to a function will move or copy, just as assignment does.
+  Return Values and Scope: When a variable that includes data on the heap goes out of scope, the value will be cleaned up by drop unless ownership of the data has been moved to another variable.
+  References and Borrowing:
+    Rust has a feature for using a value without transferring ownership, called references:
