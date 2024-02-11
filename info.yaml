@@ -117,3 +117,12 @@ Ownership:
     A slice is a kind of reference, so it does not have ownership.
   Type that signifies “string slice” is written as &str:
     - deref coercions
+Struct:
+  A struct, or structure, is a custom data type that lets you package together and name multiple related values that make up a meaningful group:
+    associated functions called methods, to specify behavior associated with a struct type.
+    Rust also supports structs that look similar to tuples, called tuple structs.
+  Method Syntax: methods are defined within the context of a struct and their first parameter is always self
+  Associated Functions:
+    All functions defined within an impl block are called associated functions because they’re associated with the type named after the impl.
+    We can define associated functions that don’t have self as their first parameter (and thus are not methods) because they don’t need an instance of the type to work with.
+    To call this associated function, we use the "::" syntax with the struct name
