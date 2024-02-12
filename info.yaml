@@ -126,3 +126,10 @@ Struct:
     All functions defined within an impl block are called associated functions because they’re associated with the type named after the impl.
     We can define associated functions that don’t have self as their first parameter (and thus are not methods) because they don’t need an instance of the type to work with.
     To call this associated function, we use the "::" syntax with the struct name
+Enum:
+  - Enumerations or Enums allow you to define a type by enumerating its possible variants.
+  - enums give you a way of saying a value is one of a possible set of values
+  - you can put any kind of data inside an enum variant - strings, numeric types, or structs
+  - The Option Enum and Its Advantages Over Null Values:
+    Matches in Rust are exhaustive: we must exhaust every last possibility in order for the code to be valid.
+    Concise Control Flow with if let: syntax sugar for a match that runs code when the value matches one pattern and then ignores all other values.
