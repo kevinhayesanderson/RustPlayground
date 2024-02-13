@@ -1,1 +1,1 @@
-Hello fellow Rustaceans!
+Learning Rust
