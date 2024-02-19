@@ -1,7 +1,7 @@
 Rust:
   - An Associated function is a function that's implemented on a type.
-  - Enumeration, often called an enum, which is a type that can be in one of multiple states:
-      - Each possible state is called a variant.
+  - ? Enumeration, often called an enum, which is a type that can be in one of multiple states
+    : - Each possible state is called a variant.
   - Ensuring Reproducible Builds with the Cargo.lock File:
       - it’s often checked into source control with the rest of the code in your project.
   - Shadowing lets us reuse the variable name rather than forcing us to create two unique variables:
@@ -40,8 +40,8 @@ Compound types:
           - Expressions implicitly return the unit value if they don’t return any other value.
       - arrays:
 Functions:
-  Rust code uses snake case as the conventional style for function and variable names, in which all letters are lowercase and underscores separate words:
-    - parameter and argument interchangeably for either the variables in a function’s definition or the concrete values passed in when you call a function.
+  ? Rust code uses snake case as the conventional style for function and variable names, in which all letters are lowercase and underscores separate words
+  : - parameter and argument interchangeably for either the variables in a function’s definition or the concrete values passed in when you call a function.
   Statements are instructions that perform some action and do not return a value:
   Expressions evaluate to a resultant value. Let’s look at some examples:
     - Calling a function is an expression.
@@ -60,8 +60,8 @@ Control Flow:
       - while:
       - for:
 Ownership:
-  It enables Rust to make memory safety guarantees without needing a garbage collector:
-    - related features: borrowing, slices, and how Rust lays data out in memory
+  ? It enables Rust to make memory safety guarantees without needing a garbage collector
+  : - related features: borrowing, slices, and how Rust lays data out in memory
   The main purpose of ownership is to manage heap data:
   Ownership Rules:
     - Each value in Rust has an owner.
@@ -94,8 +94,8 @@ Ownership:
   Return Values and Scope: When a variable that includes data on the heap goes out of scope, the value will be cleaned up by drop unless ownership of the data has been moved to another variable.
   References and Borrowing:
     Rust has a feature for using a value without transferring ownership, called references:
-    A reference is like a pointer in that it’s an address we can follow to access the data stored at that address; that data is owned by some other variable:
-      - Unlike a pointer, a reference is guaranteed to point to a valid value of a particular type for the life of that reference.
+    ? A reference is like a pointer in that it’s an address we can follow to access the data stored at that address; that data is owned by some other variable
+    : - Unlike a pointer, a reference is guaranteed to point to a valid value of a particular type for the life of that reference.
       - action of creating a reference :- borrowing
     Mutable references:
       to modify a borrowed value:
@@ -103,8 +103,8 @@ Ownership:
         - only one mutable reference to a value
         - cannot combining mutable and immutable references.
       The benefit of having this restriction is that Rust can prevent data races at compile time:
-      A data race is similar to a race condition and happens when these three behaviors occur:
-        Two or more pointers access the same data at the same time.
+      ? A data race is similar to a race condition and happens when these three behaviors occur
+      : Two or more pointers access the same data at the same time.
         At least one of the pointers is being used to write to the data.
         There’s no mechanism being used to synchronize access to the data.
       Data races cause undefined behavior and can be difficult to diagnose and fix when you’re trying to track them down at runtime; Rust prevents this problem by refusing to compile code with data races!:
@@ -118,8 +118,8 @@ Ownership:
   Type that signifies “string slice” is written as &str:
     - deref coercions
 Struct:
-  A struct, or structure, is a custom data type that lets you package together and name multiple related values that make up a meaningful group:
-    associated functions called methods, to specify behavior associated with a struct type.
+  ? A struct, or structure, is a custom data type that lets you package together and name multiple related values that make up a meaningful group
+  : associated functions called methods, to specify behavior associated with a struct type.
     Rust also supports structs that look similar to tuples, called tuple structs.
   Method Syntax: methods are defined within the context of a struct and their first parameter is always self
   Associated Functions:
@@ -158,3 +158,8 @@ Managing Growing Projects with Packages, Crates, and Modules:
   Cargo follows a convention that src/main.rs is the crate root of a binary crate with the same name as the package:
   Cargo knows that if the package directory contains src/lib.rs, the package contains a library crate with the same name as the package, and src/lib.rs is its crate root.:
   Cargo passes the crate root files to rustc to build the library or binary.:
+  src/main.rs and src/lib.rs are called crate roots: The reason for their name is that the contents of either of these two files form a module named crate at the root of the crate’s module structure, known as the module tree.
+  Items in a parent module can’t use the private items inside child modules, but items in child modules can use the items in their ancestor modules.: This is because child modules wrap and hide their implementation details, but the child modules can see the context in which they’re defined.
+  Rust API Guidelines: https://rust-lang.github.io/api-guidelines/
+  Best Practices for Packages with a Binary and a Library: https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#best-practices-for-packages-with-a-binary-and-a-library
+  Exporting a Convenient Public API with pub use: https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#exporting-a-convenient-public-api-with-pub-use
