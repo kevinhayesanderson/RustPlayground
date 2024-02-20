@@ -163,3 +163,9 @@ Managing Growing Projects with Packages, Crates, and Modules:
   Rust API Guidelines: https://rust-lang.github.io/api-guidelines/
   Best Practices for Packages with a Binary and a Library: https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#best-practices-for-packages-with-a-binary-and-a-library
   Exporting a Convenient Public API with pub use: https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#exporting-a-convenient-public-api-with-pub-use
+Collections:
+  - data these collections point to is stored on the heap
+  - which means the amount of data does not need to be known at compile time and can grow or shrink as the program runs.
+  - Vector: A vector allows you to store a variable number of values next to each other.
+  - String: A string is a collection of characters.
+  - Hash map: A hash map allows you to associate a value with a particular key.
