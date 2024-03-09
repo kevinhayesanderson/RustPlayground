@@ -68,11 +68,16 @@ pub fn indexing_strings() {
 pub fn iterating_strings() {
     let function_name = function_name!();
     println!("{function_name}");
-    
+
     let hello = "Здравствуйте";
 
     for c in hello.chars() {
         println!("{c}")
+    }
+
+    let hello = String::from("नमस्ते");
+    for c in hello.chars() {
+        println!("{c}") // can see the diacritics part from the characters
     }
 
     for b in hello.bytes() {
