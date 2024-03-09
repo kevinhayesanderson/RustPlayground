@@ -1,6 +1,8 @@
 mod string_collection;
 mod vectors;
 use string_collection as sc;
+mod hash_maps;
+use hash_maps as hm;
 
 fn main() {
     println!("Hello, world!");
@@ -13,4 +15,6 @@ fn main() {
     sc::updating_strings();
     sc::indexing_strings();
     sc::iterating_strings();
+
+    hm::creating_hash_maps();
 }

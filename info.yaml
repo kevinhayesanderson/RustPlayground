@@ -176,3 +176,4 @@ Collections:
     - Using an Enum to Store Multiple Types:
   String: Rust has only one string type in the core language,
     which is the string slice str that is usually seen in its borrowed form &str.
+  Hash Maps:
