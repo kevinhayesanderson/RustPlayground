@@ -177,3 +177,4 @@ Collections:
   String: Rust has only one string type in the core language,
     which is the string slice str that is usually seen in its borrowed form &str.
   Hash Maps:
+    Like vectors, hash maps are homogeneous: all of the keys must have the same type as each other, and all of the values must have the same type.
