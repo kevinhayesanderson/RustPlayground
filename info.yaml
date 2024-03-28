@@ -178,3 +178,8 @@ Collections:
     which is the string slice str that is usually seen in its borrowed form &str.
   Hash Maps:
     Like vectors, hash maps are homogeneous: all of the keys must have the same type as each other, and all of the values must have the same type.
+Error Handling:
+  Rust does’t have exceptions:
+  Types:
+    recoverable: type Result<T, E> for recoverable errors
+    unrecoverable: panic! macro that stops execution when the program encounters an unrecoverable error.
