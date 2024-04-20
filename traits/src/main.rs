@@ -93,8 +93,8 @@ impl<T: Display + PartialOrd> Pair<T> {
 // We can also conditionally implement a trait for any type that implements another trait.
 // Implementations of a trait on any type that satisfies the trait bounds are called blanket implementations
 // and are extensively used in the Rust standard library.
-impl<T: Summary> ToString for T {
-    fn to_string(&self) -> String {
-        String::from("")
-    }
-}
+// impl<T: Summary> ToString for T {
+//     fn to_string(&self) -> String {
+//         String::from("")
+//     }
+// }
