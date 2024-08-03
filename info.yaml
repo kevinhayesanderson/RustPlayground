@@ -215,3 +215,4 @@ Annotating lifetimes:
     and the second and third rules apply to output lifetimes.
   The Static Lifetime:
     reference can live for the entire duration of the program.
+  Tests:
